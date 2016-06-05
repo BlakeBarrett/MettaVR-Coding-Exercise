@@ -60,6 +60,7 @@ class MettaVideoTableViewController: UIViewController, UITableViewDelegate, UITa
     // 
     func present360(item:MettaItem) {
         // TODO: Bring in 3rd party 360-video rendering "SDK"
+        print(item)
     }
     
     
