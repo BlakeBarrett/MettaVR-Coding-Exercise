@@ -23,6 +23,7 @@ class MettaItem {
             self.previewUrl = NSURL(string: url)
         }
         
+        copies = [MettaVideoItem]()
         if let copiesDictionary = info["copies"] as? NSDictionary {
             copiesDictionary.allKeys.forEach({ (key:AnyObject) in
                 let item = copiesDictionary.valueForKey(key as! String) as! NSDictionary

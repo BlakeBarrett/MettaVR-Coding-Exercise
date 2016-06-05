@@ -57,10 +57,12 @@ class MettaVideoTableViewController: UIViewController, UITableViewDelegate, UITa
         self.present360(item)
     }
 
-    // 
     func present360(item:MettaItem) {
-        // TODO: Bring in 3rd party 360-video rendering "SDK"
-        print(item)
+        let videoUrl = item.copies?.first?.url
+        let player = HTY360PlayerVC(nibName: "HTY360PlayerVC", bundle: NSBundle.mainBundle(), url: videoUrl)
+        self.presentViewController(player, animated: true) { 
+            
+        }
     }
     
     
