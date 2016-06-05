@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -26,17 +25,14 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mettaItemCellReuseIdentifier" rowHeight="160" id="LWC-RD-kVG" customClass="MettaItemCellView" customModule="MettaVR_Coding_Exercise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="LWC-RD-kVG" id="7TO-Wa-OLu">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LWC-RD-kVG" id="7TO-Wa-OLu">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7QH-YX-80c">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7QH-YX-80c">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="7QH-YX-80c" secondAttribute="height" multiplier="16:9" id="fU5-1A-Xbu"/>
-                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-cd-8AI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-cd-8AI">
                                                     <rect key="frame" x="8" y="131" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,13 +40,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7QH-YX-80c" firstAttribute="top" secondItem="7TO-Wa-OLu" secondAttribute="top" id="119-Lu-ove"/>
-                                                <constraint firstItem="7QH-YX-80c" firstAttribute="leading" secondItem="7TO-Wa-OLu" secondAttribute="leading" id="5eI-Pr-SaX"/>
-                                                <constraint firstAttribute="trailing" secondItem="7QH-YX-80c" secondAttribute="trailing" id="BJd-Yi-fQi"/>
-                                                <constraint firstItem="uOg-cd-8AI" firstAttribute="bottom" secondItem="7TO-Wa-OLu" secondAttribute="bottomMargin" id="dyj-vj-x0n"/>
-                                                <constraint firstItem="uOg-cd-8AI" firstAttribute="leading" secondItem="7TO-Wa-OLu" secondAttribute="leadingMargin" id="fdY-d1-mD3"/>
-                                                <constraint firstAttribute="bottom" secondItem="7QH-YX-80c" secondAttribute="bottom" id="i1f-v5-41c"/>
-                                                <constraint firstItem="uOg-cd-8AI" firstAttribute="trailing" secondItem="7TO-Wa-OLu" secondAttribute="trailingMargin" id="jzD-hu-La3"/>
+                                                <constraint firstItem="7QH-YX-80c" firstAttribute="top" secondItem="7TO-Wa-OLu" secondAttribute="top" id="3Ry-Al-JYc"/>
+                                                <constraint firstItem="uOg-cd-8AI" firstAttribute="leading" secondItem="7TO-Wa-OLu" secondAttribute="leadingMargin" id="CV2-zr-AOr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="uOg-cd-8AI" secondAttribute="bottom" constant="-1" id="FUu-yK-eog"/>
+                                                <constraint firstItem="7QH-YX-80c" firstAttribute="centerY" secondItem="7TO-Wa-OLu" secondAttribute="centerY" id="Pmk-n3-Fz5"/>
+                                                <constraint firstItem="uOg-cd-8AI" firstAttribute="centerX" secondItem="7QH-YX-80c" secondAttribute="centerX" id="Zhf-uz-rGb"/>
+                                                <constraint firstAttribute="trailing" secondItem="7QH-YX-80c" secondAttribute="trailing" id="hVs-Z4-kf7"/>
+                                                <constraint firstItem="7QH-YX-80c" firstAttribute="leading" secondItem="7TO-Wa-OLu" secondAttribute="leading" id="sya-MZ-vx7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -63,10 +59,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IC5-rw-82L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5Yt-KY-KPy"/>
-                            <constraint firstItem="IC5-rw-82L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="8Pt-wa-z9q"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IC5-rw-82L" secondAttribute="bottom" id="TIr-5f-eMT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IC5-rw-82L" secondAttribute="trailing" constant="-20" id="tdF-99-HUW"/>
+                            <constraint firstAttribute="trailing" secondItem="IC5-rw-82L" secondAttribute="trailing" id="Yld-vQ-hNO"/>
+                            <constraint firstItem="IC5-rw-82L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vsc-G5-zuN"/>
+                            <constraint firstItem="IC5-rw-82L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wma-MN-tMm"/>
+                            <constraint firstItem="IC5-rw-82L" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="xv1-et-sgr"/>
                         </constraints>
                     </view>
                     <connections>
