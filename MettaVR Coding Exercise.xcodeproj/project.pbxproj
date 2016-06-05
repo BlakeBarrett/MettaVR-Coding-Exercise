@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		25788C3C1D03A45800942B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25788C3B1D03A45800942B6E /* AppDelegate.swift */; };
-		25788C3E1D03A45800942B6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25788C3D1D03A45800942B6E /* ViewController.swift */; };
+		25788C3E1D03A45800942B6E /* MettaVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25788C3D1D03A45800942B6E /* MettaVideoTableViewController.swift */; };
 		25788C411D03A45800942B6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25788C3F1D03A45800942B6E /* Main.storyboard */; };
 		25788C431D03A45800942B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25788C421D03A45800942B6E /* Assets.xcassets */; };
 		25788C461D03A45800942B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25788C441D03A45800942B6E /* LaunchScreen.storyboard */; };
+		25788C511D03A7A900942B6E /* MettaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25788C501D03A7A900942B6E /* MettaItem.swift */; };
+		25788C541D03A82800942B6E /* MettaVideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25788C531D03A82800942B6E /* MettaVideoItem.swift */; };
+		25788C561D03B86300942B6E /* MettaItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25788C551D03B86300942B6E /* MettaItemCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		25788C381D03A45800942B6E /* MettaVR Coding Exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MettaVR Coding Exercise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25788C3B1D03A45800942B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25788C3D1D03A45800942B6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		25788C3D1D03A45800942B6E /* MettaVideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettaVideoTableViewController.swift; sourceTree = "<group>"; };
 		25788C401D03A45800942B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25788C421D03A45800942B6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25788C451D03A45800942B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25788C471D03A45800942B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25788C501D03A7A900942B6E /* MettaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MettaItem.swift; path = "MettaVR Coding Exercise/MettaItem.swift"; sourceTree = "<group>"; };
+		25788C531D03A82800942B6E /* MettaVideoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MettaVideoItem.swift; sourceTree = "<group>"; };
+		25788C551D03B86300942B6E /* MettaItemCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MettaItemCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,50 @@
 		25788C3A1D03A45800942B6E /* MettaVR Coding Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				25788C521D03A7B000942B6E /* Models */,
+				25788C4E1D03A66F00942B6E /* Views */,
+				25788C4D1D03A66600942B6E /* Controllers */,
+				25788C4F1D03A67800942B6E /* Etc */,
+			);
+			path = "MettaVR Coding Exercise";
+			sourceTree = "<group>";
+		};
+		25788C4D1D03A66600942B6E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				25788C3D1D03A45800942B6E /* MettaVideoTableViewController.swift */,
 				25788C3B1D03A45800942B6E /* AppDelegate.swift */,
-				25788C3D1D03A45800942B6E /* ViewController.swift */,
+				25788C551D03B86300942B6E /* MettaItemCellView.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		25788C4E1D03A66F00942B6E /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				25788C3F1D03A45800942B6E /* Main.storyboard */,
 				25788C421D03A45800942B6E /* Assets.xcassets */,
 				25788C441D03A45800942B6E /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		25788C4F1D03A67800942B6E /* Etc */ = {
+			isa = PBXGroup;
+			children = (
 				25788C471D03A45800942B6E /* Info.plist */,
 			);
-			path = "MettaVR Coding Exercise";
+			name = Etc;
+			sourceTree = "<group>";
+		};
+		25788C521D03A7B000942B6E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				25788C501D03A7A900942B6E /* MettaItem.swift */,
+				25788C531D03A82800942B6E /* MettaVideoItem.swift */,
+			);
+			name = Models;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25788C3E1D03A45800942B6E /* ViewController.swift in Sources */,
+				25788C3E1D03A45800942B6E /* MettaVideoTableViewController.swift in Sources */,
+				25788C511D03A7A900942B6E /* MettaItem.swift in Sources */,
+				25788C561D03B86300942B6E /* MettaItemCellView.swift in Sources */,
 				25788C3C1D03A45800942B6E /* AppDelegate.swift in Sources */,
+				25788C541D03A82800942B6E /* MettaVideoItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

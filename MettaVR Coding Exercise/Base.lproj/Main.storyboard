@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Metta Video Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MettaVideoTableViewController" customModule="MettaVR_Coding_Exercise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,64 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-rw-82L">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mettaItemCellReuseIdentifier" rowHeight="160" id="LWC-RD-kVG" customClass="MettaItemCellView" customModule="MettaVR_Coding_Exercise" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="LWC-RD-kVG" id="7TO-Wa-OLu">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7QH-YX-80c">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="7QH-YX-80c" secondAttribute="height" multiplier="16:9" id="fU5-1A-Xbu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-cd-8AI">
+                                                    <rect key="frame" x="8" y="131" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7QH-YX-80c" firstAttribute="top" secondItem="7TO-Wa-OLu" secondAttribute="top" id="119-Lu-ove"/>
+                                                <constraint firstItem="7QH-YX-80c" firstAttribute="leading" secondItem="7TO-Wa-OLu" secondAttribute="leading" id="5eI-Pr-SaX"/>
+                                                <constraint firstAttribute="trailing" secondItem="7QH-YX-80c" secondAttribute="trailing" id="BJd-Yi-fQi"/>
+                                                <constraint firstItem="uOg-cd-8AI" firstAttribute="bottom" secondItem="7TO-Wa-OLu" secondAttribute="bottomMargin" id="dyj-vj-x0n"/>
+                                                <constraint firstItem="uOg-cd-8AI" firstAttribute="leading" secondItem="7TO-Wa-OLu" secondAttribute="leadingMargin" id="fdY-d1-mD3"/>
+                                                <constraint firstAttribute="bottom" secondItem="7QH-YX-80c" secondAttribute="bottom" id="i1f-v5-41c"/>
+                                                <constraint firstItem="uOg-cd-8AI" firstAttribute="trailing" secondItem="7TO-Wa-OLu" secondAttribute="trailingMargin" id="jzD-hu-La3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backgroundImageView" destination="7QH-YX-80c" id="zuq-RZ-SCA"/>
+                                            <outlet property="titleLabelView" destination="uOg-cd-8AI" id="11X-Ct-s6b"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IC5-rw-82L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5Yt-KY-KPy"/>
+                            <constraint firstItem="IC5-rw-82L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="8Pt-wa-z9q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IC5-rw-82L" secondAttribute="bottom" id="TIr-5f-eMT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IC5-rw-82L" secondAttribute="trailing" constant="-20" id="tdF-99-HUW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="IC5-rw-82L" id="PUT-63-kcL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="301" y="389"/>
         </scene>
     </scenes>
 </document>
