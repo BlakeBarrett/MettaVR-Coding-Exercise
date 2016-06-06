@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2525DED71D061343000216EE /* AVPlayerThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2525DED61D061343000216EE /* AVPlayerThumbnailGenerator.swift */; };
+		2525DED91D06181A000216EE /* HTY360PlayerWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2525DED81D06181A000216EE /* HTY360PlayerWrapperViewController.swift */; };
 		255451B11D04BE5C000EA3C1 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 255451AF1D04BE5C000EA3C1 /* Shader.fsh */; };
 		255451B21D04BE5C000EA3C1 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 255451B01D04BE5C000EA3C1 /* Shader.vsh */; };
 		255451B41D04BE66000EA3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255451B31D04BE66000EA3C1 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2525DED61D061343000216EE /* AVPlayerThumbnailGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerThumbnailGenerator.swift; sourceTree = "<group>"; };
+		2525DED81D06181A000216EE /* HTY360PlayerWrapperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTY360PlayerWrapperViewController.swift; sourceTree = "<group>"; };
 		255451AF1D04BE5C000EA3C1 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = HTY360Player/Shader.fsh; sourceTree = "<group>"; };
 		255451B01D04BE5C000EA3C1 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = HTY360Player/Shader.vsh; sourceTree = "<group>"; };
 		255451B31D04BE66000EA3C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = HTY360Player/Assets.xcassets; sourceTree = "<group>"; };
@@ -45,7 +49,7 @@
 		25788C501D03A7A900942B6E /* MettaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MettaItem.swift; path = "MettaVR Coding Exercise/MettaItem.swift"; sourceTree = "<group>"; };
 		25788C551D03B86300942B6E /* MettaItemCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MettaItemCellView.swift; sourceTree = "<group>"; };
 		25788C571D03EA4100942B6E /* MettaVideoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MettaVideoItem.swift; path = "MettaVR Coding Exercise/MettaVideoItem.swift"; sourceTree = "<group>"; };
-		25F953FE1D04B436000D27CD /* MettaVR Coding Exercise-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MettaVR Coding Exercise-Bridging-Header.h"; sourceTree = "<group>"; };
+		25F953FE1D04B436000D27CD /* MettaVR Coding Exercise-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MettaVR Coding Exercise-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,6 @@
 			children = (
 				25788C3A1D03A45800942B6E /* MettaVR Coding Exercise */,
 				25F954041D04B442000D27CD /* HTY360Player */,
-				25F953FE1D04B436000D27CD /* MettaVR Coding Exercise-Bridging-Header.h */,
 				25788C391D03A45800942B6E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +96,7 @@
 			children = (
 				25788C3D1D03A45800942B6E /* MettaVideoTableViewController.swift */,
 				25788C551D03B86300942B6E /* MettaItemCellView.swift */,
+				2525DED81D06181A000216EE /* HTY360PlayerWrapperViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -110,6 +114,8 @@
 		25788C4F1D03A67800942B6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2525DED61D061343000216EE /* AVPlayerThumbnailGenerator.swift */,
+				25F953FE1D04B436000D27CD /* MettaVR Coding Exercise-Bridging-Header.h */,
 				25788C3B1D03A45800942B6E /* AppDelegate.swift */,
 				25788C471D03A45800942B6E /* Info.plist */,
 			);
@@ -237,10 +243,12 @@
 				25788C3E1D03A45800942B6E /* MettaVideoTableViewController.swift in Sources */,
 				25788C511D03A7A900942B6E /* MettaItem.swift in Sources */,
 				25788C561D03B86300942B6E /* MettaItemCellView.swift in Sources */,
+				2525DED91D06181A000216EE /* HTY360PlayerWrapperViewController.swift in Sources */,
 				25788C3C1D03A45800942B6E /* AppDelegate.swift in Sources */,
 				25788C581D03EA4100942B6E /* MettaVideoItem.swift in Sources */,
 				255451BA1D04BE86000EA3C1 /* HTYGLKVC.m in Sources */,
 				255451B91D04BE86000EA3C1 /* GLProgram.m in Sources */,
+				2525DED71D061343000216EE /* AVPlayerThumbnailGenerator.swift in Sources */,
 				255451BE1D04BE90000EA3C1 /* HTY360PlayerVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +296,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -334,6 +343,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HTY360PlayerVC">
@@ -12,6 +13,7 @@
                 <outlet property="playButton" destination="3Pr-21-8dz" id="Nom-Nr-PNu"/>
                 <outlet property="playerControlBackgroundView" destination="utK-WR-lKf" id="mZV-sx-MoY"/>
                 <outlet property="progressSlider" destination="UtA-4n-mGO" id="93H-Vc-Wi3"/>
+                <outlet property="thumbnailImageView" destination="wF0-Ao-cNh" id="GgR-WH-6hK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -85,6 +87,14 @@
                         <constraint firstItem="XuQ-LV-4yQ" firstAttribute="top" secondItem="utK-WR-lKf" secondAttribute="top" constant="8" id="zrL-Fb-azK"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wF0-Ao-cNh" userLabel="thumbnailImageView">
+                    <rect key="frame" x="30" y="372" width="160" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="PDy-is-lBh"/>
+                        <constraint firstAttribute="width" constant="160" id="bws-km-bC3"/>
+                        <constraint firstAttribute="width" secondItem="wF0-Ao-cNh" secondAttribute="height" multiplier="16:9" id="z89-kW-urR"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -93,6 +103,8 @@
                 <constraint firstItem="utK-WR-lKf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="agq-Yy-Nsi"/>
                 <constraint firstAttribute="trailing" secondItem="utK-WR-lKf" secondAttribute="trailing" constant="30" id="jNk-tJ-Xc4"/>
                 <constraint firstItem="utK-WR-lKf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mr7-p9-MlX"/>
+                <constraint firstItem="utK-WR-lKf" firstAttribute="top" secondItem="wF0-Ao-cNh" secondAttribute="bottom" constant="8" id="n5x-69-1E5"/>
+                <constraint firstItem="wF0-Ao-cNh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="xg6-ME-tXx"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
