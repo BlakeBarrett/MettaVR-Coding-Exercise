@@ -15,7 +15,6 @@ class HTY360PlayerWrapperViewController: HTY360PlayerVC {
     }
     
     init(url: NSURL) {
-        // UIImage* thumbnailAtTime = _playerItem.getThumbnailForTime(cmTime);
         super.init(nibName: "HTY360PlayerVC", bundle: NSBundle.mainBundle(), url: url)
     }
     
