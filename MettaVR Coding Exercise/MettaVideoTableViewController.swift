@@ -38,14 +38,17 @@ class MettaVideoTableViewController: UIViewController, UITableViewDelegate, UITa
         let cell = tableView.dequeueReusableCellWithIdentifier("mettaItemCellReuseIdentifier", forIndexPath: indexPath) as! MettaItemCellView
         let item = items[indexPath.row]
         
-        guard let url = item.previewUrl else { return cell }
-        guard let imageData = NSData(contentsOfURL: url) else { return cell }
-        guard let image = UIImage(data: imageData) else { return cell }
+        cell.backgroundImageView.image = nil
         
-        dispatch_async(dispatch_get_main_queue(), {
-            cell.titleLabelView.text = item.title
-            cell.backgroundImageView.image = image
-        })
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+            guard let url = item.previewUrl else { return }
+            guard let imageData = NSData(contentsOfURL: url) else { return }
+            guard let image = UIImage(data: imageData) else { return }
+            dispatch_async(dispatch_get_main_queue()) {
+                cell.titleLabelView.text = item.title
+                cell.backgroundImageView.image = image
+            }
+        }
         
         return cell
     }
