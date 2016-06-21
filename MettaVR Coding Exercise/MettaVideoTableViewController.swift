@@ -23,6 +23,11 @@ class MettaVideoTableViewController: UIViewController, UITableViewDelegate, UITa
         self.tableView.dataSource = self
         
         self.loadDataFromAPI()
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("mettaItemSelected", object: nil, queue: NSOperationQueue.mainQueue()) { item in
+            guard let _ = item.object as? MettaItem else { return }
+            self.present360(item.object as! MettaItem)
+        }
     }
     
     // MARK: TableViewDelegate and DataSource implementation methods
@@ -38,6 +43,7 @@ class MettaVideoTableViewController: UIViewController, UITableViewDelegate, UITa
         let cell = tableView.dequeueReusableCellWithIdentifier("mettaItemCellReuseIdentifier", forIndexPath: indexPath) as! MettaItemCellView
         let item = items[indexPath.row]
         
+        cell.item = item
         cell.titleLabelView.text = item.title
         cell.geographyLabelView.text = item.geography
         cell.backgroundImageView.image = nil
@@ -56,10 +62,9 @@ class MettaVideoTableViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let item = items[indexPath.row]
-        
+//        let item = items[indexPath.row]
         // show the item selected
-        self.present360(item)
+//        self.present360(item)
     }
 
     func present360(item:MettaItem) {

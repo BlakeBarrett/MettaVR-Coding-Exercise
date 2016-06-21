@@ -9,7 +9,13 @@
 import UIKit
 
 class MettaItemCellView : UITableViewCell {
+    var item: MettaItem?
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabelView: UILabel!
     @IBOutlet weak var geographyLabelView: UILabel!
+    
+    @IBAction func onPlayButtonClick(sender: UIButton) {
+        NSNotificationCenter.defaultCenter().postNotificationName("mettaItemSelected", object: item)
+    }
 }
