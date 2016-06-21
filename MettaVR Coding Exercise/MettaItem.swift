@@ -14,6 +14,7 @@ class MettaItem {
     var description: String?
     var copies: [MettaVideoItem]?
     var previewUrl: NSURL?
+    var geography: String?
     
     init(info: NSDictionary) {
         
@@ -22,6 +23,8 @@ class MettaItem {
         if let url = info["previewUrl"] as? String {
             self.previewUrl = NSURL(string: url)
         }
+        
+        self.geography = info["location"] as? String
         
         copies = [MettaVideoItem]()
         if let copiesDictionary = info["copies"] as? NSDictionary {

@@ -11,4 +11,5 @@ import UIKit
 class MettaItemCellView : UITableViewCell {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabelView: UILabel!
+    @IBOutlet weak var geographyLabelView: UILabel!
 }
