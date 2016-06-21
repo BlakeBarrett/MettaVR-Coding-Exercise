@@ -340,6 +340,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^(void) {
                          _playerControlBackgroundView.alpha = 0.0f;
+                         _thumbnailImageView.alpha = _playerControlBackgroundView.alpha;
                      }
                      completion:^(BOOL finished){
                          if(finished)
@@ -364,6 +365,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^(void) {
                          _playerControlBackgroundView.alpha = DEFAULT_VIEW_ALPHA;
+                         _thumbnailImageView.alpha = _playerControlBackgroundView.alpha;
                      }
                      completion:nil];
 }
@@ -439,6 +441,27 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
     }
 }
 
+-(CMTime)getTimeForSlideLocation:(UISlider*)slider {
+    CMTime playerDuration = [self playerItemDuration];
+    if (CMTIME_IS_INVALID(playerDuration)) {
+        return playerDuration;
+    }
+    
+    double duration = CMTimeGetSeconds(playerDuration);
+    if (isfinite(duration)) {
+        float minValue = [slider minimumValue];
+        float maxValue = [slider maximumValue];
+        float value = [slider value];
+        
+        double time = duration * (value - minValue) / (maxValue - minValue);
+        
+        // happy path
+        CMTime cmTime = CMTimeMakeWithSeconds(time, NSEC_PER_SEC);
+        return cmTime;
+    }
+    return playerDuration;
+}
+
 /* The user is dragging the movie controller thumb to scrub through the movie. */
 - (IBAction)beginScrubbing:(id)sender {
     mRestoreAfterScrubbingRate = [_player rate];
@@ -446,28 +469,30 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
     
     /* Remove previous timer. */
     [self removeTimeObserverForPlayer];
+    
+    /* show thumbnail */
+    UISlider* slider = sender;
+    CMTime cmTime = [self getTimeForSlideLocation:slider];
+    [self showThumbnailFor:slider atTime:cmTime withPlayerItem:_playerItem];
 }
+
+-(void)showThumbnailFor:(UISlider*)scrubber atTime:(CMTime)time withPlayerItem:(AVPlayerItem*)player {
+    // TODO: Implement in subclass
+}
+
+-(void)hideThumbnail {
+    // TODO: Implement in subclass
+}
+
 
 /* Set the player current time to match the scrubber position. */
 - (IBAction)scrub:(id)sender {
     if ([sender isKindOfClass:[UISlider class]]) {
-        UISlider* slider = sender;
         
-        CMTime playerDuration = [self playerItemDuration];
-        if (CMTIME_IS_INVALID(playerDuration)) {
-            return;
-        }
+        CMTime cmTime = [self getTimeForSlideLocation:sender];
+        [self showThumbnailFor:sender atTime:cmTime withPlayerItem:_playerItem];
+        [_player seekToTime:cmTime];
         
-        double duration = CMTimeGetSeconds(playerDuration);
-        if (isfinite(duration)) {
-            float minValue = [slider minimumValue];
-            float maxValue = [slider maximumValue];
-            float value = [slider value];
-            
-            double time = duration * (value - minValue) / (maxValue - minValue);
-            
-            [_player seekToTime:CMTimeMakeWithSeconds(time, NSEC_PER_SEC)];
-        }
     }
 }
 

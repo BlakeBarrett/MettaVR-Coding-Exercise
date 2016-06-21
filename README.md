@@ -39,3 +39,4 @@ You have up to 7 days to send back the completed challenge. If you have any pre-
 ![ScreenShot](./ScreenShots/ScreenShot-2.png)
 ![ScreenShot](./ScreenShots/ScreenShot-3.png)
 ![ScreenShot](./ScreenShots/ScreenShot-4.png)
+![ScreenShot](./ScreenShots/ScreenShot-5.png)

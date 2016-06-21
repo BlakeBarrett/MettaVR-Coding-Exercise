@@ -59,7 +59,7 @@ class MettaVideoTableViewController: UIViewController, UITableViewDelegate, UITa
 
     func present360(item:MettaItem) {
         let videoUrl = item.copies?.first?.url
-        let player = HTY360PlayerVC(nibName: "HTY360PlayerVC", bundle: NSBundle.mainBundle(), url: videoUrl)
+        let player = HTY360PlayerWrapperViewController(url: videoUrl!)
         self.presentViewController(player, animated: true) { 
             
         }
